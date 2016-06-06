@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -163,18 +165,38 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="SJp-Ua-y7F">
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Weight:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8g-ze-uyZ">
-                                <rect key="frame" x="24" y="393" width="72" height="21"/>
-                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="13"/>
-                                <color key="textColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Base Attack:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufb-Uf-tWQ">
-                                <rect key="frame" x="403" y="393" width="85" height="21"/>
-                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="13"/>
-                                <color key="textColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="gjW-qj-to1">
+                                <rect key="frame" x="24" y="393" width="556" height="16"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8g-ze-uyZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="139" height="16"/>
+                                        <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="13"/>
+                                        <color key="textColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2000?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxq-ov-Ymj">
+                                        <rect key="frame" x="139" y="0.0" width="139" height="16"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="13"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Base Attack:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufb-Uf-tWQ">
+                                        <rect key="frame" x="278" y="0.0" width="139" height="16"/>
+                                        <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="13"/>
+                                        <color key="textColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2000?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9cl-qu-dKv">
+                                        <rect key="frame" x="417" y="0.0" width="139" height="16"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="13"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="6QQ-Bz-eTa"/>
+                                </constraints>
+                            </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oc9-zd-dMF">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="55"/>
                                 <subviews>
@@ -203,6 +225,9 @@
                                             <constraint firstAttribute="width" constant="42" id="o9c-Y7-neP"/>
                                         </constraints>
                                         <state key="normal" image="8bitBack"/>
+                                        <connections>
+                                            <action selector="backButtonPressed:" destination="wPS-wy-UbY" eventType="touchUpInside" id="8wt-gS-9nB"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -214,75 +239,110 @@
                                     <constraint firstItem="QW5-NC-naB" firstAttribute="leading" secondItem="Oc9-zd-dMF" secondAttribute="leading" constant="16" id="uKb-Pi-pw4"/>
                                 </constraints>
                             </view>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="d3p-8M-rMD">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="d3p-8M-rMD">
                                 <rect key="frame" x="20" y="73" width="560" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="aNY-Nk-jE5"/>
+                                </constraints>
                                 <segments>
                                     <segment title="Bio"/>
                                     <segment title="Moves"/>
                                 </segments>
                                 <color key="tintColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </segmentedControl>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="6" translatesAutoresizingMaskIntoConstraints="NO" id="Gop-Qe-Det">
-                                <rect key="frame" x="20" y="109" width="150" height="150"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="0eI-73-pFW">
-                                <rect key="frame" x="178" y="109" width="402" height="150"/>
-                                <mutableString key="text">Charizard was one of several different character choices conceived by Game Freak's character development team and finalized by Ken Sugimori for the first generation of Pocket Monsters games Red and Green, which were localized outside Japan as Pokémon Red and Blue.  Originally called "Lizardon" in Japanese, Nintendo decided to give the various Pokémon species "clever and descriptive names" related to their appearance or features when translating the game for western audiences as a means to make the characters more relatable to American children.</mutableString>
-                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="15"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tog-jV-Lwt">
-                                <rect key="frame" x="24" y="267" width="72" height="21"/>
-                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="15"/>
-                                <color key="textColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Defense:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AXo-ac-Wqx">
-                                <rect key="frame" x="416" y="267" width="72" height="21"/>
-                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="15"/>
-                                <color key="textColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Height:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hil-Q1-98w">
-                                <rect key="frame" x="24" y="339" width="72" height="21"/>
-                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="13"/>
-                                <color key="textColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2000?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QJh-bt-xAU">
-                                <rect key="frame" x="88" y="339" width="238" height="21"/>
-                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="13"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2000?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxq-ov-Ymj">
-                                <rect key="frame" x="88" y="393" width="238" height="21"/>
-                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="13"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2000?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iwe-Aq-M6q">
-                                <rect key="frame" x="496" y="338" width="78" height="21"/>
-                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="13"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pokemon Id:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zf9-z8-gRg">
-                                <rect key="frame" x="405" y="339" width="83" height="21"/>
-                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="13"/>
-                                <color key="textColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="74h-8G-AVh">
-                                <rect key="frame" x="20" y="0.0" width="560" height="0.0"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CpX-V8-uAF">
+                                <rect key="frame" x="20" y="109" width="560" height="125"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="6" translatesAutoresizingMaskIntoConstraints="NO" id="Gop-Qe-Det">
+                                        <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="125" id="Pjr-bU-yE1"/>
+                                            <constraint firstAttribute="height" constant="125" id="eMA-Zy-eEZ"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="0eI-73-pFW">
+                                        <rect key="frame" x="125" y="0.0" width="435" height="125"/>
+                                        <string key="text">Charizard was one of several different character choices conceived by Game Freak's character development team and finalized by Ken Sugimori for the first generation of Pocket Monsters games Red and Green, which were localized outside Japan as Pokémon Red and Blue.  Originally called "Lizardon" in Japanese, Nintendo decided to give the various Pokémon species "clever and descriptive names" related to their appearance or features when translating the game for western audiences as a means to make the characters more relatable to American children.</string>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="15"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="IZa-f1-vWc">
+                                <rect key="frame" x="20" y="359" width="560" height="18"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tog-jV-Lwt">
+                                        <rect key="frame" x="0.0" y="0.0" width="140" height="18"/>
+                                        <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="15"/>
+                                        <color key="textColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2000?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zH8-w8-xG8">
+                                        <rect key="frame" x="140" y="0.0" width="140" height="18"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="13"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Defense:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AXo-ac-Wqx">
+                                        <rect key="frame" x="280" y="0.0" width="140" height="18"/>
+                                        <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="15"/>
+                                        <color key="textColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2000?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d82-pK-nfR">
+                                        <rect key="frame" x="420" y="0.0" width="140" height="18"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="13"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="QmT-el-Nuw"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="y88-uB-Jne">
+                                <rect key="frame" x="24" y="339" width="556" height="16"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Height:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hil-Q1-98w">
+                                        <rect key="frame" x="0.0" y="0.0" width="139" height="16"/>
+                                        <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="13"/>
+                                        <color key="textColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2000?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QJh-bt-xAU">
+                                        <rect key="frame" x="139" y="0.0" width="139" height="16"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="13"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pokemon Id:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zf9-z8-gRg">
+                                        <rect key="frame" x="278" y="0.0" width="139" height="16"/>
+                                        <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="13"/>
+                                        <color key="textColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2000?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iwe-Aq-M6q">
+                                        <rect key="frame" x="417" y="0.0" width="139" height="16"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="13"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="EfK-cS-Pdo"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="74h-8G-AVh">
+                                <rect key="frame" x="20" y="330" width="560" height="0.0"/>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="contentStretch" x="0.20000000000000001" y="0.0" width="1" height="1"/>
                             </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RE8-Kb-S2z">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RE8-Kb-S2z">
                                 <rect key="frame" x="0.0" y="440" width="600" height="34"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Next Evolution: Charmaster LVL 32" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HDg-6C-g2Q">
-                                        <rect key="frame" x="155.5" y="6.5" width="289" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next Evolution: Charmaster LVL 32" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HDg-6C-g2Q">
+                                        <rect key="frame" x="155" y="6" width="289" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="308-4h-BKE"/>
                                             <constraint firstAttribute="width" constant="289" id="9My-Yv-Ve2"/>
@@ -296,49 +356,101 @@
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
+                                                <exclude reference="308-4h-BKE"/>
                                                 <exclude reference="LT1-8W-6qm"/>
                                                 <exclude reference="hWJ-Z6-OuG"/>
+                                                <exclude reference="p7h-ls-nkw"/>
                                             </mask>
                                         </variation>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="5KM-ZU-uxx"/>
                                     <constraint firstItem="HDg-6C-g2Q" firstAttribute="centerX" secondItem="RE8-Kb-S2z" secondAttribute="centerX" id="KDO-du-ngH"/>
                                     <constraint firstAttribute="height" constant="34" id="MX2-Au-fvN"/>
                                     <constraint firstItem="HDg-6C-g2Q" firstAttribute="centerY" secondItem="RE8-Kb-S2z" secondAttribute="centerY" id="WOU-ou-r0b"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="567" translatesAutoresizingMaskIntoConstraints="NO" id="9xj-6u-rSY">
-                                <rect key="frame" x="20" y="482" width="100" height="100"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="437" translatesAutoresizingMaskIntoConstraints="NO" id="hNx-wX-cA1">
-                                <rect key="frame" x="141" y="482" width="100" height="100"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2000?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9cl-qu-dKv">
-                                <rect key="frame" x="496" y="393" width="78" height="21"/>
-                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="13"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="IH4-Lt-EZ8">
+                                <rect key="frame" x="195" y="478" width="210" height="100"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9xj-6u-rSY">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="9xj-6u-rSY" secondAttribute="height" multiplier="24:25" id="bGr-yH-nZT"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hNx-wX-cA1">
+                                        <rect key="frame" x="110" y="0.0" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="hNx-wX-cA1" secondAttribute="height" multiplier="24:25" id="TaB-MA-bVN"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="210" id="Xry-pu-mso"/>
+                                    <constraint firstAttribute="height" constant="100" id="eFL-GT-nOV"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="gjW-qj-to1" firstAttribute="leading" secondItem="qnD-gL-m1g" secondAttribute="leadingMargin" constant="4" id="03k-ir-HCj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IZa-f1-vWc" secondAttribute="trailing" id="07Z-D8-IQq"/>
+                            <constraint firstItem="d3p-8M-rMD" firstAttribute="top" secondItem="Oc9-zd-dMF" secondAttribute="bottom" constant="18" id="0p3-j2-3h6"/>
+                            <constraint firstItem="CpX-V8-uAF" firstAttribute="leading" secondItem="qnD-gL-m1g" secondAttribute="leadingMargin" id="6ha-Ck-e4D"/>
                             <constraint firstAttribute="trailing" secondItem="RE8-Kb-S2z" secondAttribute="trailing" id="6jQ-1v-Ngr"/>
+                            <constraint firstItem="y88-uB-Jne" firstAttribute="leading" secondItem="qnD-gL-m1g" secondAttribute="leadingMargin" constant="4" id="ARA-pS-UmR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="y88-uB-Jne" secondAttribute="trailing" id="BBV-dT-1NM"/>
                             <constraint firstItem="SJp-Ua-y7F" firstAttribute="leading" secondItem="qnD-gL-m1g" secondAttribute="leading" id="BSm-KJ-cXG"/>
+                            <constraint firstItem="RE8-Kb-S2z" firstAttribute="top" secondItem="gjW-qj-to1" secondAttribute="bottom" constant="31" id="Bkq-ge-rSE"/>
                             <constraint firstItem="KqO-vH-SZg" firstAttribute="top" secondItem="SJp-Ua-y7F" secondAttribute="bottom" id="Cgt-re-t7M"/>
                             <constraint firstItem="SJp-Ua-y7F" firstAttribute="top" secondItem="Db7-uF-AD8" secondAttribute="bottom" id="F3y-hU-pvP"/>
                             <constraint firstItem="Oc9-zd-dMF" firstAttribute="top" secondItem="qnD-gL-m1g" secondAttribute="top" id="GMa-2m-Ry3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IH4-Lt-EZ8" secondAttribute="trailing" constant="358" id="HVj-D3-3g5"/>
                             <constraint firstAttribute="trailing" secondItem="74h-8G-AVh" secondAttribute="trailing" constant="20" id="I62-BM-s6u"/>
+                            <constraint firstItem="KqO-vH-SZg" firstAttribute="top" secondItem="IH4-Lt-EZ8" secondAttribute="bottom" constant="22" id="KWO-eu-Hhx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="CpX-V8-uAF" secondAttribute="trailing" id="NC7-Wd-svo"/>
                             <constraint firstItem="74h-8G-AVh" firstAttribute="leading" secondItem="qnD-gL-m1g" secondAttribute="leading" constant="20" id="Pb4-Mi-BJn"/>
+                            <constraint firstItem="d3p-8M-rMD" firstAttribute="leading" secondItem="qnD-gL-m1g" secondAttribute="leadingMargin" id="Rtn-cd-iZR"/>
+                            <constraint firstItem="IZa-f1-vWc" firstAttribute="leading" secondItem="qnD-gL-m1g" secondAttribute="leadingMargin" id="VCy-XQ-4sr"/>
+                            <constraint firstAttribute="trailing" secondItem="RE8-Kb-S2z" secondAttribute="trailing" id="YAD-Rm-0ej"/>
+                            <constraint firstItem="IH4-Lt-EZ8" firstAttribute="leading" secondItem="qnD-gL-m1g" secondAttribute="leadingMargin" id="YMN-tb-Fci"/>
+                            <constraint firstItem="74h-8G-AVh" firstAttribute="top" secondItem="IZa-f1-vWc" secondAttribute="bottom" constant="30" id="ZdN-7c-7jl"/>
+                            <constraint firstItem="IH4-Lt-EZ8" firstAttribute="centerX" secondItem="qnD-gL-m1g" secondAttribute="centerX" id="aUO-Am-bMk"/>
                             <constraint firstItem="Oc9-zd-dMF" firstAttribute="leading" secondItem="qnD-gL-m1g" secondAttribute="leading" id="cXS-bX-Xwg"/>
+                            <constraint firstItem="RE8-Kb-S2z" firstAttribute="leading" secondItem="qnD-gL-m1g" secondAttribute="leading" id="hOL-IP-Q2X"/>
+                            <constraint firstItem="IZa-f1-vWc" firstAttribute="top" secondItem="CpX-V8-uAF" secondAttribute="bottom" constant="77" id="lhj-by-ihf"/>
+                            <constraint firstItem="IH4-Lt-EZ8" firstAttribute="top" secondItem="RE8-Kb-S2z" secondAttribute="bottom" constant="4" id="mKX-mZ-9e3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gjW-qj-to1" secondAttribute="trailing" id="mf5-fl-gky"/>
+                            <constraint firstItem="CpX-V8-uAF" firstAttribute="top" secondItem="d3p-8M-rMD" secondAttribute="bottom" constant="8" id="osz-VX-w0v"/>
                             <constraint firstAttribute="trailing" secondItem="SJp-Ua-y7F" secondAttribute="trailing" id="uSZ-pB-jE2"/>
                             <constraint firstAttribute="trailing" secondItem="Oc9-zd-dMF" secondAttribute="trailing" id="waH-6P-k0a"/>
                             <constraint firstItem="RE8-Kb-S2z" firstAttribute="leading" secondItem="qnD-gL-m1g" secondAttribute="leading" id="xeB-UC-XVg"/>
+                            <constraint firstItem="gjW-qj-to1" firstAttribute="top" secondItem="y88-uB-Jne" secondAttribute="bottom" constant="38" id="y16-cp-ZyN"/>
+                            <constraint firstItem="d3p-8M-rMD" firstAttribute="trailing" secondItem="qnD-gL-m1g" secondAttribute="trailingMargin" id="y8S-qj-j2B"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="HVj-D3-3g5"/>
+                                <exclude reference="YMN-tb-Fci"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
+                        <outlet property="attackLabel" destination="9cl-qu-dKv" id="Og0-DZ-bTL"/>
+                        <outlet property="currentEvolutionImg" destination="9xj-6u-rSY" id="euf-Pi-Mi0"/>
+                        <outlet property="defenseLabel" destination="d82-pK-nfR" id="NPq-31-Inc"/>
+                        <outlet property="descriptionLabel" destination="0eI-73-pFW" id="NCG-up-Fuv"/>
+                        <outlet property="evolutionLabel" destination="HDg-6C-g2Q" id="sMb-AU-WuN"/>
+                        <outlet property="heightLabel" destination="QJh-bt-xAU" id="gh1-a8-mrw"/>
+                        <outlet property="mainImg" destination="Gop-Qe-Det" id="2xR-tB-XgY"/>
+                        <outlet property="nextEvolutionImg" destination="hNx-wX-cA1" id="YEi-mE-mzp"/>
+                        <outlet property="pokemonIDLabel" destination="Iwe-Aq-M6q" id="5rl-mm-Gh6"/>
                         <outlet property="pokemonNameLabel" destination="oFe-Xs-7dU" id="hwk-xO-wrA"/>
+                        <outlet property="typeLabel" destination="zH8-w8-xG8" id="kNt-8h-nP5"/>
+                        <outlet property="weightLabel" destination="dxq-ov-Ymj" id="rCL-8V-lIf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SHL-y6-YTN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -348,8 +460,6 @@
     </scenes>
     <resources>
         <image name="10035" width="96" height="96"/>
-        <image name="437" width="96" height="96"/>
-        <image name="567" width="96" height="96"/>
         <image name="6" width="96" height="96"/>
         <image name="8bitBack" width="72" height="63"/>
         <image name="bg" width="1920" height="1200"/>
